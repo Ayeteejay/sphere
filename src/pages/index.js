@@ -27,6 +27,19 @@ const Index = () => {
             </a>
           </div>
         </div>
+        <div className="row">
+          <h2>Inputs</h2>
+          <div className="input-row">
+            <input placeholder="Your name"></input>
+            <input placeholder="Email"></input>
+            <input placeholder="Company"></input>
+            <input placeholder="Interest"></input>
+            <textarea placeholder="Your message"></textarea>
+            <a href="#" className="form-btn">
+              Send
+            </a>
+          </div>
+        </div>
       </div>
     </Layout>
   );

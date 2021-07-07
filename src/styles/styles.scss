@@ -11,7 +11,9 @@ $darkBlue: #00538d;
 $burntOrange: #fdb913;
 $midBrown: #b76421;
 $lightGray: #cfdce7;
+$midGray: #808080;
 $charcoal: #555555;
+$lightBlue: #7397b1;
 
 // Breakpoints
 $xs: 450px;
@@ -50,6 +52,26 @@ body {
   margin: 0;
   color: $charcoal;
   font-family: $workSans;
+  textarea,
+  input {
+    width: 50%;
+    padding: 1rem 1.5rem;
+    font-family: $workSans;
+    font-size: 1rem;
+    border-radius: 2rem;
+    background: linear-gradient(to right, $lightGray, white);
+    color: $darkBlue;
+    border: 1px solid $darkBlue;
+    transition: 500ms ease-in-out;
+    margin: 0 0 1rem 0;
+    &:focus {
+      border: 1px solid $brightBlue;
+      outline: 0px solid transparent;
+    }
+    &::placeholder {
+      color: $lightBlue;
+    }
+  }
   a {
     @include headers();
     text-decoration: none;
@@ -66,6 +88,7 @@ body {
     padding: 1rem 0 4rem 0;
   }
 }
+
 .container {
   @include flexLayout();
 }
@@ -80,7 +103,7 @@ body {
   @include flexLayout(center, flex-start, column);
   width: 100%;
   padding: 10%;
-  background-image: linear-gradient(150deg, $brightBlue, $darkBlue);
+  background-image: linear-gradient(100deg, $brightBlue, $darkBlue);
 }
 .logo {
   max-width: 175px;
@@ -98,9 +121,17 @@ body {
     }
   }
 }
+.input-row {
+  width: 100%;
+  @include flexLayout(center, flex-start, column);
+  @media (min-width: $lg) {
+    @include flexLayout();
+  }
+}
 
 // Components
-.primary-btn {
+.primary-btn,
+.form-btn {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -122,6 +153,10 @@ body {
     -moz-box-shadow: -4px 2px 16px -2px rgba(0, 0, 0, 0);
     --grade: 100%;
   }
+}
+.form-btn {
+  max-width: 50%;
+  margin: 0;
 }
 .secondary-btn {
   display: flex;
