@@ -4,7 +4,7 @@ import Sphere from '../images/sphere-logo.png';
 const Hero = () =>{
     return (
         <div className="hero">
-            <img src={Sphere} className="logo"/>
+            <img src={Sphere} className="logo" alt="Sphere Logo"/>
             <h1>Sphere Component Library</h1>
         </div>
     )

@@ -16,13 +16,13 @@ const Index = () => {
         <div className="row">
           <h2>Buttons</h2>
           <div className="button-row">
-            <a href="#" className="primary-btn">
+            <a href="/" className="primary-btn">
               Primary Button
             </a>
-            <a href="#" className="alternative-btn">
+            <a href="/" className="alternative-btn">
               Alternative Button
             </a>
-            <a href="#" className="secondary-btn">
+            <a href="/" className="secondary-btn">
               Secondary Button
             </a>
           </div>
@@ -35,7 +35,7 @@ const Index = () => {
             <input placeholder="Company"></input>
             <input placeholder="Interest"></input>
             <textarea placeholder="Your message"></textarea>
-            <a href="#" className="form-btn">
+            <a href="/" className="form-btn">
               Send
             </a>
           </div>
