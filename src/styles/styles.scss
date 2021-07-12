@@ -313,42 +313,21 @@ body {
   align-items: center;
   width: 100%;
   margin: auto;
-  max-width: 18em;
+  max-width: 15em;
   padding: 1rem;
+  color: white;
   border-radius: 10rem;
-  position: relative;
-  $border: 4px;
-  color: $darkBlue;
-  background: linear-gradient(to right, $lightGray, white);
-  background-clip: padding-box;
-  border: solid $border transparent;
+  transition: all 500ms ease-in-out;
+  background: linear-gradient(150deg, $brightBlue, $darkBlue 35%, $brightBlue)
+    var(--grade, 0) / 300%;
   box-shadow: -4px 2px 16px -2px rgba(0, 0, 0, 0.4);
   -webkit-box-shadow: -4px 2px 16px -2px rgba(0, 0, 0, 0.4);
   -moz-box-shadow: -4px 2px 16px -2px rgba(0, 0, 0, 0.4);
-  transition: all 250ms ease-in-out;
-  &:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: -1;
-    margin: -$border;
-    border-radius: inherit;
-    background: linear-gradient(140deg, $brightBlue, $darkBlue);
-    transition: all 750ms ease;
-    background-size: 150% 150%;
-    background-position: 100% 100%;
-  }
   &:hover {
     box-shadow: -4px 2px 16px -2px rgba(0, 0, 0, 0);
     -webkit-box-shadow: -4px 2px 16px -2px rgba(0, 0, 0, 0);
     -moz-box-shadow: -4px 2px 16px -2px rgba(0, 0, 0, 0);
-
-    &:before {
-      background-position: 0% 0%;
-    }
+    --grade: 100%;
   }
 }
 .form-btn {
