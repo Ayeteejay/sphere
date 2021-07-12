@@ -9,6 +9,8 @@ $brightBlue: #00f9fd;
 $midBlue: #0094fc;
 $darkBlue: #00538d;
 $burntOrange: #fdb913;
+$brightOrange: #f49f00;
+$yellow: #ffe200;
 $midBrown: #b76421;
 $lightGray: #cfdce7;
 $midGray: #808080;
@@ -31,12 +33,12 @@ $xxl: 1400px;
   flex-flow: $flow;
 }
 
-@mixin headers {
+@mixin headers($transform: uppercase, $color: $darkBlue) {
   font-family: $prompt;
   letter-spacing: 2px;
-  text-transform: uppercase;
+  text-transform: $transform;
   font-weight: 300;
-  color: $darkBlue;
+  color: $color;
 }
 
 *,
@@ -62,7 +64,7 @@ body {
     background: linear-gradient(to right, $lightGray, white);
     color: $darkBlue;
     border: 1px solid $darkBlue;
-    transition: 500ms ease-in-out;
+    transition: all 500ms ease-in-out;
     margin: 0 0 1rem 0;
     &:focus {
       border: 1px solid $brightBlue;
@@ -83,9 +85,23 @@ body {
     line-height: 1;
   }
   h2 {
-    @include headers();
+    @include headers(none);
     font-size: 3rem;
     padding: 1rem 0 4rem 0;
+  }
+  h2.experts {
+    @include headers(none, $midBrown);
+    font-size: 3rem;
+    padding: 1rem 0 4rem 0;
+  }
+  h2.general {
+    @include headers(none, $charcoal);
+    font-size: 3rem;
+    padding: 1rem 0 4rem 0;
+  }
+  h3 {
+    @include headers(uppercase, $charcoal);
+    font-size: 1rem;
   }
 }
 
@@ -129,9 +145,8 @@ body {
   }
 }
 
-// Components
-.primary-btn,
-.form-btn {
+// SphereBoard Components
+.sb-primary {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -141,8 +156,8 @@ body {
   padding: 1rem;
   color: white;
   border-radius: 10rem;
-  transition: 500ms ease-in-out;
-  background: linear-gradient(90deg, $midBlue, $darkBlue 51%, $burntOrange)
+  transition: all 500ms ease-in-out;
+  background: linear-gradient(90deg, $midBlue, $darkBlue 51%, $midBlue)
     var(--grade, 0) / 300%;
   box-shadow: -4px 2px 16px -2px rgba(0, 0, 0, 0.4);
   -webkit-box-shadow: -4px 2px 16px -2px rgba(0, 0, 0, 0.4);
@@ -154,11 +169,7 @@ body {
     --grade: 100%;
   }
 }
-.form-btn {
-  max-width: 50%;
-  margin: 0;
-}
-.secondary-btn {
+.sb-secondary {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -176,7 +187,7 @@ body {
   box-shadow: -4px 2px 16px -2px rgba(0, 0, 0, 0.4);
   -webkit-box-shadow: -4px 2px 16px -2px rgba(0, 0, 0, 0.4);
   -moz-box-shadow: -4px 2px 16px -2px rgba(0, 0, 0, 0.4);
-  transition: 250ms ease-in-out;
+  transition: all 250ms ease-in-out;
   &:before {
     content: "";
     position: absolute;
@@ -188,7 +199,7 @@ body {
     margin: -$border;
     border-radius: inherit;
     background: linear-gradient(140deg, $brightBlue, $darkBlue);
-    transition: 750ms ease;
+    transition: all 750ms ease;
     background-size: 150% 150%;
     background-position: 100% 100%;
   }
@@ -203,18 +214,20 @@ body {
   }
 }
 
-.alternative-btn {
+// SphereExperts Components
+
+.se-primary {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
   margin: auto;
-  max-width: 18em;
+  max-width: 15em;
   padding: 1rem;
   color: white;
   border-radius: 10rem;
-  transition: 500ms ease-in-out;
-  background: linear-gradient(90deg, $burntOrange, $midBrown 51%, $midBlue)
+  transition: all 500ms ease-in-out;
+  background: linear-gradient(90deg, $burntOrange, $midBrown 51%, $burntOrange)
     var(--grade, 0) / 400%;
   box-shadow: -4px 2px 16px -2px rgba(0, 0, 0, 0.4);
   -webkit-box-shadow: -4px 2px 16px -2px rgba(0, 0, 0, 0.4);
@@ -225,4 +238,120 @@ body {
     -moz-box-shadow: -4px 2px 16px -2px rgba(0, 0, 0, 0);
     --grade: 100%;
   }
+}
+.se-secondary {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: auto;
+  max-width: 18em;
+  padding: 1rem;
+  border-radius: 10rem;
+  position: relative;
+  $border: 4px;
+  color: $brightOrange;
+  background: linear-gradient(to right, $lightGray, white);
+  background-clip: padding-box;
+  border: solid $border transparent;
+  box-shadow: -4px 2px 16px -2px rgba(0, 0, 0, 0.4);
+  -webkit-box-shadow: -4px 2px 16px -2px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: -4px 2px 16px -2px rgba(0, 0, 0, 0.4);
+  transition: all 250ms ease-in-out;
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    margin: -$border;
+    border-radius: inherit;
+    background: linear-gradient(140deg, $yellow, $brightOrange);
+    transition: all 750ms ease;
+    background-size: 150% 150%;
+    background-position: 100% 100%;
+  }
+  &:hover {
+    box-shadow: -4px 2px 16px -2px rgba(0, 0, 0, 0);
+    -webkit-box-shadow: -4px 2px 16px -2px rgba(0, 0, 0, 0);
+    -moz-box-shadow: -4px 2px 16px -2px rgba(0, 0, 0, 0);
+    &:before {
+      background-position: 0% 0%;
+    }
+  }
+}
+
+// General Components
+.gen-primary {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: auto;
+  max-width: 15em;
+  padding: 1rem;
+  color: white;
+  border-radius: 10rem;
+  transition: all 500ms ease-in-out;
+  background: linear-gradient(150deg, $brightBlue, $darkBlue 35%, $brightBlue)
+    var(--grade, 0) / 300%;
+  box-shadow: -4px 2px 16px -2px rgba(0, 0, 0, 0.4);
+  -webkit-box-shadow: -4px 2px 16px -2px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: -4px 2px 16px -2px rgba(0, 0, 0, 0.4);
+  &:hover {
+    box-shadow: -4px 2px 16px -2px rgba(0, 0, 0, 0);
+    -webkit-box-shadow: -4px 2px 16px -2px rgba(0, 0, 0, 0);
+    -moz-box-shadow: -4px 2px 16px -2px rgba(0, 0, 0, 0);
+    --grade: 100%;
+  }
+}
+.form-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: auto;
+  max-width: 18em;
+  padding: 1rem;
+  border-radius: 10rem;
+  position: relative;
+  $border: 4px;
+  color: $darkBlue;
+  background: linear-gradient(to right, $lightGray, white);
+  background-clip: padding-box;
+  border: solid $border transparent;
+  box-shadow: -4px 2px 16px -2px rgba(0, 0, 0, 0.4);
+  -webkit-box-shadow: -4px 2px 16px -2px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: -4px 2px 16px -2px rgba(0, 0, 0, 0.4);
+  transition: all 250ms ease-in-out;
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    margin: -$border;
+    border-radius: inherit;
+    background: linear-gradient(140deg, $brightBlue, $darkBlue);
+    transition: all 750ms ease;
+    background-size: 150% 150%;
+    background-position: 100% 100%;
+  }
+  &:hover {
+    box-shadow: -4px 2px 16px -2px rgba(0, 0, 0, 0);
+    -webkit-box-shadow: -4px 2px 16px -2px rgba(0, 0, 0, 0);
+    -moz-box-shadow: -4px 2px 16px -2px rgba(0, 0, 0, 0);
+
+    &:before {
+      background-position: 0% 0%;
+    }
+  }
+}
+.form-btn {
+  max-width: 50%;
+  margin: 0;
 }

@@ -14,15 +14,37 @@ const Index = () => {
       <Hero></Hero>
       <div className="content">
         <div className="row">
-          <h2>Buttons</h2>
+          <h3>Buttons</h3>
+          <h2 className="general">General</h2>
           <div className="button-row">
-            <a href="/" className="primary-btn">
+            <a href="/" className="gen-primary">
               Primary Button
             </a>
-            <a href="/" className="alternative-btn">
-              Alternative Button
+            <a href="/" className="sb-secondary">
+              Secondary Button
             </a>
-            <a href="/" className="secondary-btn">
+          </div>
+        </div>
+        <div className="row">
+          <h3>Buttons</h3>
+          <h2>SphereBoard</h2>
+          <div className="button-row">
+            <a href="/" className="sb-primary">
+              Primary Button
+            </a>
+            <a href="/" className="sb-secondary">
+              Secondary Button
+            </a>
+          </div>
+        </div>
+        <div className="row">
+          <h3>Buttons</h3>
+          <h2 className="experts">SphereExperts</h2>
+          <div className="button-row">
+            <a href="/" className="se-primary">
+              Primary Button
+            </a>
+            <a href="/" className="se-secondary">
               Secondary Button
             </a>
           </div>
