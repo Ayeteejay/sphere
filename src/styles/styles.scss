@@ -16,6 +16,7 @@ $lightGray: #cfdce7;
 $midGray: #808080;
 $charcoal: #555555;
 $lightBlue: #7397b1;
+$white: #fff;
 
 // Breakpoints
 $xs: 450px;
@@ -119,7 +120,7 @@ body {
   @include flexLayout(center, flex-start, column);
   width: 100%;
   padding: 10%;
-  background-image: linear-gradient(100deg, $brightBlue, $darkBlue);
+  background-image: linear-gradient(150deg, $white, $lightBlue);
 }
 .logo {
   max-width: 175px;
