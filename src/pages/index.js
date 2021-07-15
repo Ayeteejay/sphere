@@ -5,6 +5,7 @@ import Layout from "../components/layout";
 import Hero from "../components/hero";
 import Card from "../components/card";
 import Background from "../images/resource-background.jpg";
+import BackgroundTwo from "../images/resource-background-2.jpg";
 import Helmet from "react-helmet";
 
 const Index = () => {
@@ -28,6 +29,12 @@ const Index = () => {
               }
               image={Background}
               chips={["News", "Data", "Business"]}
+            ></Card>
+            <Card
+              date={"July 1, 2021"}
+              name={"SPHERE Insights: Key Active Directory Concepts to Master"}
+              image={BackgroundTwo}
+              chips={["News", "Whitepaper"]}
             ></Card>
           </div>
         </div>
