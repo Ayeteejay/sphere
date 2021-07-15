@@ -1,7 +1,10 @@
 import * as React from "react";
 import "../styles/styles.scss";
+import favicon from "../images/favicon.ico";
 import Layout from "../components/layout";
 import Hero from "../components/hero";
+import Card from "../components/card";
+import Background from "../images/resource-background.jpg";
 import Helmet from "react-helmet";
 
 const Index = () => {
@@ -10,9 +13,24 @@ const Index = () => {
       <Helmet>
         <meta charSet="utf-8" />
         <title>Sphere</title>
+        <meta name="description" content="Component library for Sphere site" />
+        <link rel="icon" href={favicon}></link>
       </Helmet>
       <Hero></Hero>
       <div className="content">
+        <div className="row">
+          <h2>Cards</h2>
+          <div className="card-row">
+            <Card
+              date={"June 20, 2021"}
+              name={
+                "SPHERE Insights: 6 Things to Know about Active Directory and Data Risk"
+              }
+              image={Background}
+              chips={["News", "Data", "Business"]}
+            ></Card>
+          </div>
+        </div>
         <div className="row">
           <h3>Buttons</h3>
           <h2 className="general">General</h2>
