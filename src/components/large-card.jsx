@@ -8,9 +8,9 @@ const LargeCard = () =>{
 
                     </div>
                     <div className="description-col">
-                    <h3>Giving Back</h3>
-                    <h2>Philanthropy headline goes here</h2>
-                    <p>Lorem ipsum dolor sit amet, adiscing elit, sed do eimod tempor incidunt ut labore et dolore. Lorem ipsum dolor sit amet, adiscing elit, sed do eimod tempor incidunt ut labore et dolore. Lorem ipsum dolor sit amet, adiscing elit, sed do eimod tempor.</p>
+                        <h3>Giving Back</h3>
+                        <h2>Philanthropy headline goes here</h2>
+                        <p>Lorem ipsum dolor sit amet, adiscing elit, sed do eimod tempor incidunt ut labore et dolore. Lorem ipsum dolor sit amet, adiscing elit, sed do eimod tempor incidunt ut labore et dolore. Lorem ipsum dolor sit amet, adiscing elit, sed do eimod tempor.</p>
                     </div>
                 </div>
             </div>
