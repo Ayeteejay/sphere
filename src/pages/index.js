@@ -4,6 +4,7 @@ import favicon from "../images/favicon.ico";
 import Layout from "../components/layout";
 import Hero from "../components/hero";
 import Card from "../components/card";
+import LargeCard from "../components/large-card";
 import Background from "../images/resource-background.jpg";
 import BackgroundTwo from "../images/resource-background-2.jpg";
 import Helmet from "react-helmet";
@@ -19,6 +20,7 @@ const Index = () => {
       </Helmet>
       <Hero></Hero>
       <div className="content">
+        <LargeCard></LargeCard>
         <div className="row">
           <h2>Cards</h2>
           <div className="card-row">

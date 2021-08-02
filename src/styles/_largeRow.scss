@@ -1,0 +1,43 @@
+// Colors
+$cardBlue: #e6e7ed;
+$cardGray: #f7f8fa;
+
+.large-card {
+  background: url("../images/sphere-white-ring.svg"),
+    linear-gradient(to right, $cardBlue, $cardGray);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 0% -25%;
+  padding: 3rem 4rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  grid-gap: 1rem;
+  h2 {
+    text-transform: uppercase;
+    padding: 1rem 0;
+    line-height: 1.25;
+    font-size: 2rem;
+  }
+  @media (min-width: 992px) {
+    grid-template-columns: 1fr 2fr;
+    padding: 5rem 8rem;
+    h2 {
+      font-size: 3rem;
+    }
+  }
+}
+.team-col {
+  background: white;
+  border-radius: 100%;
+  width: 250px;
+  height: 250px;
+  -webkit-box-shadow: 0px 5px 15px 5px rgba(0, 0, 0, 0.09);
+  box-shadow: 0px 5px 15px 5px rgba(0, 0, 0, 0.09);
+  border: 20px solid white;
+  background-image: url("../images/team.jpg");
+  background-size: cover;
+  transition: all 500ms;
+}
+.description-col {
+}
