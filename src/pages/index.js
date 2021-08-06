@@ -20,7 +20,7 @@ const Index = () => {
       </Helmet>
       <Hero></Hero>
       <div className="content">
-        <LargeCard></LargeCard>
+        {/* <LargeCard></LargeCard> */}
         <div className="row">
           <h2>Cards</h2>
           <div className="card-row">
